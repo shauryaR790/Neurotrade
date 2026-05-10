@@ -129,11 +129,11 @@ export default function MarketOverview() {
           {/* Movers list */}
           <GlassCard className="rounded-3xl p-4 sm:p-6 lg:col-span-12">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-              <div>
+              <div className="min-w-0 flex-1">
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
                   Top movers · curated by Aurora
                 </div>
-                <div className="text-lg font-semibold text-white">
+                <div className="text-balance text-[15px] font-semibold leading-snug text-white sm:text-lg">
                   Where the smart money is leaning right now
                 </div>
               </div>
@@ -154,17 +154,17 @@ export default function MarketOverview() {
               </div>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[820px] text-left">
+            <div className="-mx-1 overflow-x-auto sm:mx-0">
+              <table className="w-full min-w-[420px] text-left sm:min-w-[820px]">
                 <thead>
                   <tr className="text-[10.5px] uppercase tracking-[0.16em] text-white/40">
-                    <th className="py-3 pr-4 font-medium">Asset</th>
-                    <th className="px-4 font-medium">Price</th>
-                    <th className="px-4 font-medium">Change</th>
-                    <th className="px-4 font-medium">Volume</th>
-                    <th className="px-4 font-medium">Trend</th>
-                    <th className="px-4 font-medium">AI signal</th>
-                    <th className="px-4 font-medium">Confidence</th>
+                    <th className="py-3 pr-3 font-medium sm:pr-4">Asset</th>
+                    <th className="px-2 font-medium sm:px-4">Price</th>
+                    <th className="px-2 font-medium sm:px-4">Change</th>
+                    <th className="hidden px-4 font-medium sm:table-cell">Volume</th>
+                    <th className="hidden px-4 font-medium md:table-cell">Trend</th>
+                    <th className="px-2 font-medium sm:px-4">AI signal</th>
+                    <th className="hidden px-4 font-medium sm:table-cell">Confidence</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -179,22 +179,22 @@ export default function MarketOverview() {
                         transition={{ duration: 0.5, delay: i * 0.04 }}
                         className="group border-t border-white/[0.05] text-[13px] text-white/85 transition-colors hover:bg-white/[0.02]"
                       >
-                        <td className="py-3.5 pr-4">
-                          <div className="flex items-center gap-3">
-                            <div className="grid h-8 w-8 place-items-center rounded-lg bg-white/[0.04] text-[10px] font-semibold uppercase tracking-wider text-white/85 ring-1 ring-white/10">
+                        <td className="py-3.5 pr-3 sm:pr-4">
+                          <div className="flex items-center gap-2 sm:gap-3">
+                            <div className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-white/[0.04] text-[10px] font-semibold uppercase tracking-wider text-white/85 ring-1 ring-white/10 sm:h-8 sm:w-8">
                               {a.symbol.slice(0, 2)}
                             </div>
-                            <div>
+                            <div className="min-w-0">
                               <div className="font-medium text-white">
                                 {a.symbol}
                               </div>
-                              <div className="text-[11.5px] text-white/45">
+                              <div className="truncate text-[11px] text-white/45 sm:text-[11.5px]">
                                 {a.name}
                               </div>
                             </div>
                           </div>
                         </td>
-                        <td className="num px-4 font-medium text-white">
+                        <td className="num px-2 font-medium text-white sm:px-4">
                           $
                           {a.price.toLocaleString("en-US", {
                             maximumFractionDigits: 2,
@@ -202,7 +202,7 @@ export default function MarketOverview() {
                         </td>
                         <td
                           className={cn(
-                            "num px-4 font-medium",
+                            "num px-2 font-medium sm:px-4",
                             positive ? "text-accent-mint" : "text-accent-rose"
                           )}
                         >
@@ -216,8 +216,8 @@ export default function MarketOverview() {
                             {a.change.toFixed(2)}%
                           </span>
                         </td>
-                        <td className="num px-4 text-white/65">{a.volume}</td>
-                        <td className="px-4">
+                        <td className="num hidden px-4 text-white/65 sm:table-cell">{a.volume}</td>
+                        <td className="hidden px-4 md:table-cell">
                           <Sparkline
                             data={a.series}
                             width={120}
@@ -225,7 +225,7 @@ export default function MarketOverview() {
                             positive={positive}
                           />
                         </td>
-                        <td className="px-4">
+                        <td className="px-2 sm:px-4">
                           <Badge
                             variant={
                               a.ai.signal === "BUY"
@@ -238,7 +238,7 @@ export default function MarketOverview() {
                             {a.ai.signal}
                           </Badge>
                         </td>
-                        <td className="px-4">
+                        <td className="hidden px-4 sm:table-cell">
                           <div className="flex items-center gap-2">
                             <div className="relative h-1 w-20 overflow-hidden rounded-full bg-white/10">
                               <div

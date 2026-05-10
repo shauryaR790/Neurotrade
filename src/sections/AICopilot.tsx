@@ -145,20 +145,20 @@ export default function AICopilot() {
           <div className="relative lg:col-span-5">
             <GlassCard
               variant="strong"
-              className="relative h-[360px] overflow-hidden rounded-3xl sm:h-[420px] lg:h-[460px]"
+              className="relative h-[300px] overflow-hidden rounded-3xl sm:h-[420px] lg:h-[460px]"
             >
               <ParticleField density={45} className="opacity-60" />
               <div className="absolute inset-0 mesh-aurora opacity-50" />
-              <div className="relative flex h-full flex-col items-center justify-center px-5 py-6 text-center sm:px-8 sm:py-10">
-                <AIOrb size={180} className="sm:hidden" />
+              <div className="relative flex h-full flex-col items-center justify-center px-4 py-5 text-center sm:px-8 sm:py-10">
+                <AIOrb size={140} className="sm:hidden" />
                 <div className="hidden sm:block">
                   <AIOrb size={240} />
                 </div>
-                <div className="mt-8">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-white/45">
+                <div className="mt-4 w-full max-w-full sm:mt-8">
+                  <div className="text-[10px] uppercase tracking-[0.22em] text-white/45 sm:text-[11px]">
                     Aurora · neural core
                   </div>
-                  <div className="mt-2 text-xl font-semibold tracking-tight text-white">
+                  <div className="mt-1.5 text-balance text-[15px] font-semibold leading-snug tracking-tight text-white sm:mt-2 sm:text-xl">
                     Reasoning across <span className="text-accent-ice">12</span>{" "}
                     frontier models
                   </div>
@@ -398,7 +398,7 @@ function ThinkingTrace() {
     "Composing recommendation",
   ];
   return (
-    <div className="mt-6 flex flex-col gap-1.5 text-left">
+    <div className="mt-3 flex flex-col gap-1 text-left sm:mt-6 sm:gap-1.5">
       {lines.map((l, i) => (
         <motion.div
           key={i}
@@ -408,13 +408,13 @@ function ThinkingTrace() {
             duration: 0.6,
             delay: 0.4 + i * 0.4,
           }}
-          className="flex items-center gap-2 text-[11.5px] text-white/55"
+          className="flex items-center gap-2 text-[10.5px] text-white/55 sm:text-[11.5px]"
         >
-          <span className="font-mono text-[10px] text-white/30">
+          <span className="font-mono text-[9.5px] text-white/30 sm:text-[10px]">
             {String(i + 1).padStart(2, "0")}
           </span>
           <span className="h-1 w-1 rounded-full bg-accent-mint shadow-[0_0_8px_rgba(125,240,194,0.7)]" />
-          {l}
+          <span className="truncate">{l}</span>
         </motion.div>
       ))}
     </div>
