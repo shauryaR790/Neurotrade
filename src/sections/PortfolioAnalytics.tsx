@@ -14,7 +14,7 @@ import { cn } from "@/utils/cn";
 
 export default function PortfolioAnalytics() {
   return (
-    <section className="relative py-32 sm:py-40">
+    <section className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -64,7 +64,7 @@ export default function PortfolioAnalytics() {
           </div>
 
           {/* Equity curve */}
-          <GlassCard className="rounded-3xl p-6 lg:col-span-8">
+          <GlassCard className="rounded-3xl p-4 sm:p-6 lg:col-span-8">
             <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -96,7 +96,7 @@ export default function PortfolioAnalytics() {
               </div>
             </div>
 
-            <div className="relative h-[300px] w-full">
+            <div className="relative h-[220px] w-full sm:h-[260px] lg:h-[300px]">
               <AreaChart
                 data={PERFORMANCE_SERIES}
                 benchmark={BENCHMARK_SERIES}
@@ -116,7 +116,7 @@ export default function PortfolioAnalytics() {
           </GlassCard>
 
           {/* Holdings + Allocation */}
-          <GlassCard className="rounded-3xl p-6 lg:col-span-4">
+          <GlassCard className="rounded-3xl p-4 sm:p-6 lg:col-span-4">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -170,7 +170,7 @@ export default function PortfolioAnalytics() {
           </GlassCard>
 
           {/* Risk + factor exposure */}
-          <GlassCard className="rounded-3xl p-6 lg:col-span-7">
+          <GlassCard className="rounded-3xl p-4 sm:p-6 lg:col-span-7">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -190,7 +190,7 @@ export default function PortfolioAnalytics() {
           {/* AI Rebalancer */}
           <GlassCard
             variant="strong"
-            className="relative overflow-hidden rounded-3xl p-6 lg:col-span-5"
+            className="relative overflow-hidden rounded-3xl p-4 sm:p-6 lg:col-span-5"
           >
             <div className="absolute inset-0 mesh-aurora opacity-30" />
             <div className="relative">

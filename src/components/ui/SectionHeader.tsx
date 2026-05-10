@@ -18,7 +18,7 @@ export default function SectionHeader({
 }: Props) {
   return (
     <div
-      className={`mb-12 flex flex-col gap-5 ${
+      className={`mb-8 flex flex-col gap-4 sm:mb-12 sm:gap-5 ${
         align === "center" ? "items-center text-center" : "items-start"
       }`}
     >
@@ -39,7 +39,7 @@ export default function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
-        className="text-balance text-3xl font-semibold tracking-tight text-gradient sm:text-4xl md:text-5xl"
+        className="text-balance text-[26px] font-semibold leading-[1.05] tracking-tight text-gradient sm:text-4xl sm:leading-tight md:text-5xl"
       >
         {title}
       </motion.h2>

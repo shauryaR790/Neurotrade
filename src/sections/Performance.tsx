@@ -13,7 +13,7 @@ export default function Performance() {
   ];
 
   return (
-    <section className="relative py-32 sm:py-40">
+    <section className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={

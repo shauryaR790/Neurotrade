@@ -43,7 +43,7 @@ export default function Watchlist() {
     notify.success("Added to watchlist", `${pick.symbol} is now being tracked.`);
   };
   return (
-    <section className="relative py-32 sm:py-40">
+    <section className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -60,15 +60,15 @@ export default function Watchlist() {
           description="Composable watchlists with live AI commentary, smart alerts, and one-click drilldown into any asset's full research dossier."
         />
 
-        <GlassCard className="rounded-3xl p-6">
+        <GlassCard className="rounded-3xl p-4 sm:p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-1 rounded-full border border-white/[0.08] bg-white/[0.02] p-1">
+            <div className="flex items-center gap-1 overflow-x-auto rounded-full border border-white/[0.08] bg-white/[0.02] p-1 -mx-1 max-w-full scrollbar-hidden">
               {tabs.map((t) => (
                 <button
                   key={t}
                   onClick={() => setTab(t)}
                   className={cn(
-                    "rounded-full px-3 py-1.5 text-[12.5px] transition-colors",
+                    "shrink-0 rounded-full px-3 py-1.5 text-[12px] transition-colors sm:text-[12.5px]",
                     t === tab
                       ? "bg-white/[0.08] text-white ring-1 ring-white/15"
                       : "text-white/55 hover:bg-white/[0.04] hover:text-white"

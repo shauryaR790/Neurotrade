@@ -24,7 +24,7 @@ export default function Hero() {
   const featured = ASSETS.slice(0, 3);
 
   return (
-    <section className="relative isolate pt-28 sm:pt-32">
+    <section className="relative isolate pt-24 sm:pt-28 lg:pt-32">
       {/* Section-local mesh */}
       <div
         aria-hidden
@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-ink-950" />
       </div>
 
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 pb-24 sm:px-6 lg:grid-cols-12 lg:gap-8 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-12 sm:px-6 sm:pb-20 lg:grid-cols-12 lg:gap-8 lg:px-8 lg:pb-24">
         {/* LEFT — Headline */}
         <div className="lg:col-span-7">
           <motion.div
@@ -56,7 +56,7 @@ export default function Hero() {
             <motion.h1
               variants={reveal}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="text-balance text-[44px] font-semibold leading-[0.98] tracking-tight sm:text-[60px] lg:text-[78px]"
+              className="text-balance text-[38px] font-semibold leading-[1.02] tracking-tight sm:text-[60px] sm:leading-[0.98] lg:text-[78px]"
             >
               <span className="text-gradient block">Trade like the future</span>
               <span className="text-gradient-blue block">
@@ -117,9 +117,72 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT — Floating cinematic stack */}
-        <div className="relative lg:col-span-5">
+        {/* RIGHT — Floating cinematic stack (desktop only — too dense for mobile) */}
+        <div className="relative hidden lg:col-span-5 lg:block">
           <FloatingStack featured={featured} />
+        </div>
+
+        {/* RIGHT — Mobile preview (compact, single card flow) */}
+        <div className="flex flex-col gap-3 lg:hidden">
+          <GlassCard variant="strong" className="overflow-hidden rounded-2xl p-4">
+            <div className="flex items-center justify-between">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/5 px-2 text-[10.5px] text-white/75">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent-mint" />
+                Aurora · Active
+              </span>
+              <Badge variant="alpha">ALPHA</Badge>
+            </div>
+            <div className="mt-3 text-[10px] uppercase tracking-[0.18em] text-white/40">
+              AI directive
+            </div>
+            <div className="mt-1 text-[14px] font-medium leading-snug text-white">
+              Rotate +2.4% from{" "}
+              <span className="text-accent-rose">defensives</span> into{" "}
+              <span className="text-accent-mint">semis & AI infra</span>.
+            </div>
+            <div className="mt-3 flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.03] p-2">
+              <span className="num text-[10px] text-white/40">Confidence</span>
+              <span className="num text-[12px] font-medium text-white">92%</span>
+            </div>
+          </GlassCard>
+
+          <GlassCard className="overflow-hidden rounded-2xl p-4">
+            <div className="flex items-center justify-between">
+              <div className="text-[10px] uppercase tracking-[0.16em] text-white/40">
+                Live signal
+              </div>
+              <Badge variant="buy" pulse>
+                BUY
+              </Badge>
+            </div>
+            <div className="mt-2 flex items-baseline gap-2">
+              <div className="text-xl font-semibold tracking-tight text-white">
+                NVDA
+              </div>
+              <div className="num text-[12px] text-white/55">
+                <AnimatedCounter
+                  value={1184.32}
+                  prefix="$"
+                  decimals={2}
+                  duration={1800}
+                />
+              </div>
+              <div className="ml-auto flex items-center gap-1 text-[11px] text-accent-mint">
+                <TrendingUp className="h-3 w-3" />
+                +3.84%
+              </div>
+            </div>
+            <div className="mt-2">
+              <Sparkline
+                data={featured[0].series}
+                width={420}
+                height={44}
+                strokeWidth={1.6}
+                positive
+                className="w-full"
+              />
+            </div>
+          </GlassCard>
         </div>
       </div>
 

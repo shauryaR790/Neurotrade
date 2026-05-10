@@ -222,6 +222,13 @@ body {
   .pretty {
     text-wrap: pretty;
   }
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Disable motion for users who prefer reduced motion */

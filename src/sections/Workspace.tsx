@@ -11,7 +11,7 @@ export default function Workspace() {
   const main = ASSETS[0];
 
   return (
-    <section className="relative py-32 sm:py-40">
+    <section className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -53,7 +53,7 @@ export default function Workspace() {
           <div className="grid grid-cols-12 gap-px bg-white/[0.04]">
             {/* Symbol + chart area */}
             <div className="col-span-12 flex flex-col gap-px lg:col-span-8">
-              <div className="bg-ink-900/60 px-5 py-4">
+              <div className="bg-ink-900/60 px-3 py-3 sm:px-5 sm:py-4">
                 <div className="flex flex-wrap items-end justify-between gap-3">
                   <div>
                     <div className="flex items-center gap-2">
@@ -77,12 +77,12 @@ export default function Workspace() {
                       </span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1">
+                  <div className="flex max-w-full items-center gap-1 overflow-x-auto rounded-full border border-white/10 bg-white/[0.03] p-1 scrollbar-hidden">
                     {["1m", "5m", "15m", "1H", "4H", "1D"].map((t, i) => (
                       <button
                         key={t}
                         className={cn(
-                          "rounded-full px-3 py-1 text-[11.5px]",
+                          "shrink-0 rounded-full px-2 py-1 text-[11px] sm:px-3 sm:text-[11.5px]",
                           i === 3
                             ? "bg-white/[0.08] text-white ring-1 ring-white/15"
                             : "text-white/55 hover:bg-white/[0.04] hover:text-white"
@@ -107,7 +107,7 @@ export default function Workspace() {
               </div>
 
               {/* Order ladder */}
-              <div className="bg-ink-900/60 px-5 py-4">
+              <div className="bg-ink-900/60 px-3 py-3 sm:px-5 sm:py-4">
                 <div className="mb-3 flex items-center justify-between">
                   <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
                     Order ladder · DOM
@@ -122,7 +122,7 @@ export default function Workspace() {
 
             {/* Right column — order ticket + alerts + AI */}
             <div className="col-span-12 flex flex-col gap-px lg:col-span-4">
-              <div className="bg-ink-900/60 px-5 py-4">
+              <div className="bg-ink-900/60 px-3 py-3 sm:px-5 sm:py-4">
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
                   Smart order
                 </div>
@@ -149,7 +149,7 @@ export default function Workspace() {
                 </div>
               </div>
 
-              <div className="bg-ink-900/60 px-5 py-4">
+              <div className="bg-ink-900/60 px-3 py-3 sm:px-5 sm:py-4">
                 <div className="flex items-center justify-between">
                   <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
                     Alerts
@@ -193,7 +193,7 @@ export default function Workspace() {
                 </ul>
               </div>
 
-              <div className="bg-ink-900/60 px-5 py-4">
+              <div className="bg-ink-900/60 px-3 py-3 sm:px-5 sm:py-4">
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
                   Aurora · live commentary
                 </div>
@@ -256,7 +256,7 @@ function CandleChart({ data }: { data: number[] }) {
     <div className="mt-3 overflow-hidden rounded-xl border border-white/[0.06] bg-[radial-gradient(ellipse_at_top,rgba(110,168,255,0.10),transparent_60%)]">
       <svg
         viewBox={`0 0 ${w} ${h}`}
-        className="h-[220px] w-full"
+        className="h-[160px] w-full sm:h-[200px] lg:h-[220px]"
         preserveAspectRatio="none"
       >
         {[0.25, 0.5, 0.75].map((p, i) => (
@@ -343,12 +343,12 @@ function Ladder() {
   const max = Math.max(...rows.map((r) => r.sz));
   return (
     <div className="overflow-hidden rounded-xl border border-white/[0.06]">
-      <table className="w-full text-[12px]">
+      <table className="w-full text-[11.5px] sm:text-[12px]">
         <thead>
-          <tr className="border-b border-white/[0.05] text-[10.5px] uppercase tracking-[0.16em] text-white/40">
-            <th className="px-4 py-2 text-left font-medium">Bid size</th>
-            <th className="px-4 py-2 text-center font-medium">Price</th>
-            <th className="px-4 py-2 text-right font-medium">Ask size</th>
+          <tr className="border-b border-white/[0.05] text-[10px] uppercase tracking-[0.16em] text-white/40 sm:text-[10.5px]">
+            <th className="px-2 py-2 text-left font-medium sm:px-4">Bid size</th>
+            <th className="px-2 py-2 text-center font-medium sm:px-4">Price</th>
+            <th className="px-2 py-2 text-right font-medium sm:px-4">Ask size</th>
           </tr>
         </thead>
         <tbody>
@@ -365,7 +365,7 @@ function Ladder() {
               >
                 <td
                   className={cn(
-                    "relative px-4 py-1.5",
+                    "relative px-2 py-1.5 sm:px-4",
                     isBid ? "text-accent-mint" : "text-white/30"
                   )}
                 >
@@ -381,7 +381,7 @@ function Ladder() {
                 </td>
                 <td
                   className={cn(
-                    "num px-4 py-1.5 text-center font-medium",
+                    "num px-2 py-1.5 text-center font-medium sm:px-4",
                     isMid ? "text-white" : "text-white/75"
                   )}
                 >
@@ -389,7 +389,7 @@ function Ladder() {
                 </td>
                 <td
                   className={cn(
-                    "relative px-4 py-1.5 text-right",
+                    "relative px-2 py-1.5 text-right sm:px-4",
                     !isBid && !isMid ? "text-accent-rose" : "text-white/30"
                   )}
                 >

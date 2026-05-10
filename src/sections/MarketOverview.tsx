@@ -11,7 +11,7 @@ import { cn } from "@/utils/cn";
 export default function MarketOverview() {
   const ASSETS = useLiveAssets();
   return (
-    <section id="markets" className="relative py-32 sm:py-40">
+    <section id="markets" className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -28,9 +28,9 @@ export default function MarketOverview() {
           description="Stream Level-2 data, sector rotation, options flow, and macro events through a single elegant surface — composed and reasoned in real time."
         />
 
-        <div className="grid gap-6 lg:grid-cols-12">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-12">
           {/* Heatmap */}
-          <GlassCard className="rounded-3xl p-6 lg:col-span-7">
+          <GlassCard className="rounded-3xl p-4 sm:p-6 lg:col-span-7">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -45,7 +45,7 @@ export default function MarketOverview() {
               </Badge>
             </div>
 
-            <div className="grid auto-rows-fr grid-cols-3 gap-2 sm:grid-cols-4">
+            <div className="grid auto-rows-fr grid-cols-2 gap-2 sm:grid-cols-4">
               {HEATMAP_SECTORS.map((s, i) => {
                 const positive = s.change >= 0;
                 const intensity = Math.min(1, Math.abs(s.change) / 4);
@@ -94,7 +94,7 @@ export default function MarketOverview() {
           </GlassCard>
 
           {/* World pulse */}
-          <GlassCard className="relative overflow-hidden rounded-3xl p-6 lg:col-span-5">
+          <GlassCard className="relative overflow-hidden rounded-3xl p-4 sm:p-6 lg:col-span-5">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -127,7 +127,7 @@ export default function MarketOverview() {
           </GlassCard>
 
           {/* Movers list */}
-          <GlassCard className="rounded-3xl p-6 lg:col-span-12">
+          <GlassCard className="rounded-3xl p-4 sm:p-6 lg:col-span-12">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -137,12 +137,12 @@ export default function MarketOverview() {
                   Where the smart money is leaning right now
                 </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2">
                 {["1H", "1D", "1W", "1M", "YTD"].map((p, i) => (
                   <button
                     key={p}
                     className={cn(
-                      "rounded-full px-3 py-1 text-[12px] transition-colors",
+                      "rounded-full px-2 py-1 text-[11px] transition-colors sm:px-3 sm:text-[12px]",
                       i === 1
                         ? "bg-white/[0.08] text-white ring-1 ring-white/15"
                         : "text-white/55 hover:bg-white/[0.04] hover:text-white"

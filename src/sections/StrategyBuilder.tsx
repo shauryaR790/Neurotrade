@@ -60,7 +60,7 @@ const equity = [
 
 export default function StrategyBuilder() {
   return (
-    <section id="strategy" className="relative py-32 sm:py-40">
+    <section id="strategy" className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -80,9 +80,9 @@ export default function StrategyBuilder() {
           description="Type a thesis. Aurora compiles it into a multi-factor pipeline, runs 10,000 walk-forward folds, and ships a tradeable strategy you can deploy in one click."
         />
 
-        <div className="grid gap-6 lg:grid-cols-12">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-12">
           {/* Builder canvas */}
-          <GlassCard className="rounded-3xl p-6 lg:col-span-8">
+          <GlassCard className="rounded-3xl p-4 sm:p-6 lg:col-span-8">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -161,7 +161,7 @@ export default function StrategyBuilder() {
           {/* Backtest panel */}
           <GlassCard
             variant="strong"
-            className="relative overflow-hidden rounded-3xl p-6 lg:col-span-4"
+            className="relative overflow-hidden rounded-3xl p-4 sm:p-6 lg:col-span-4"
           >
             <div className="absolute inset-0 mesh-aurora opacity-25" />
             <div className="relative">

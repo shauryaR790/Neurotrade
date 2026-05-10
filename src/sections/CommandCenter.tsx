@@ -22,7 +22,7 @@ export default function CommandCenter() {
   );
 
   return (
-    <section className="relative py-32 sm:py-40">
+    <section className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -40,10 +40,10 @@ export default function CommandCenter() {
           description="Press ⌘K from anywhere. Trade, scan, hedge, explain — all from one fluid command surface."
         />
 
-        <div className="grid gap-6 lg:grid-cols-12">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-12">
           <GlassCard
             variant="strong"
-            className="relative overflow-hidden rounded-3xl p-6 lg:col-span-7"
+            className="relative overflow-hidden rounded-3xl p-4 sm:p-6 lg:col-span-7"
           >
             <ParticleField density={28} className="opacity-50" />
             <div className="relative">
@@ -116,7 +116,7 @@ export default function CommandCenter() {
           </GlassCard>
 
           {/* Right CTA */}
-          <GlassCard className="relative overflow-hidden rounded-3xl p-8 lg:col-span-5">
+          <GlassCard className="relative overflow-hidden rounded-3xl p-5 sm:p-8 lg:col-span-5">
             <div className="absolute inset-0 mesh-aurora opacity-30" />
             <div className="relative">
               <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">

@@ -16,7 +16,7 @@ const tagToVariant = {
 
 export default function SignalEngine() {
   return (
-    <section className="relative py-32 sm:py-40">
+    <section className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -34,9 +34,9 @@ export default function SignalEngine() {
           description="Streaming order book, options flow, social sentiment, on-chain activity and macro indicators are fused into ranked, explainable signals."
         />
 
-        <div className="grid gap-6 lg:grid-cols-12">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-12">
           {/* Radar viz */}
-          <GlassCard className="relative overflow-hidden rounded-3xl p-6 lg:col-span-5">
+          <GlassCard className="relative overflow-hidden rounded-3xl p-4 sm:p-6 lg:col-span-5">
             <ParticleField density={32} className="opacity-60" />
             <div className="relative">
               <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -79,7 +79,7 @@ export default function SignalEngine() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
               >
-                <GlassCard className="group relative overflow-hidden rounded-2xl p-5 transition-all hover:-translate-y-0.5 hover:shadow-glow">
+                <GlassCard className="group relative overflow-hidden rounded-2xl p-4 transition-all hover:-translate-y-0.5 hover:shadow-glow sm:p-5">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-2.5">
                       <span className="grid h-8 w-8 place-items-center rounded-lg bg-[radial-gradient(circle_at_30%_30%,#a8c8ff,#6ea8ff_60%,#1a2236)] text-white shadow-[0_0_18px_rgba(110,168,255,0.4)]">
@@ -117,8 +117,8 @@ export default function SignalEngine() {
                     {ins.summary}
                   </p>
 
-                  <div className="mt-3 flex items-center justify-between">
-                    <div className="relative h-1 w-40 overflow-hidden rounded-full bg-white/[0.06]">
+                  <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+                    <div className="relative h-1 w-32 overflow-hidden rounded-full bg-white/[0.06] sm:w-40">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${ins.confidence}%` }}
@@ -170,7 +170,7 @@ function RadarChart() {
 
   return (
     <div className="mt-4 flex justify-center">
-      <svg viewBox="0 0 300 300" className="h-72 w-72">
+      <svg viewBox="0 0 300 300" className="h-56 w-56 sm:h-72 sm:w-72">
         <defs>
           <radialGradient id="radar-fill" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="rgba(110,168,255,0.55)" />

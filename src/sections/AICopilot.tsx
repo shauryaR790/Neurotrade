@@ -123,7 +123,7 @@ export default function AICopilot() {
   };
 
   return (
-    <section id="copilot" className="relative py-32 sm:py-40">
+    <section id="copilot" className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -145,12 +145,15 @@ export default function AICopilot() {
           <div className="relative lg:col-span-5">
             <GlassCard
               variant="strong"
-              className="relative h-[460px] overflow-hidden rounded-3xl"
+              className="relative h-[360px] overflow-hidden rounded-3xl sm:h-[420px] lg:h-[460px]"
             >
               <ParticleField density={45} className="opacity-60" />
               <div className="absolute inset-0 mesh-aurora opacity-50" />
-              <div className="relative flex h-full flex-col items-center justify-center px-8 py-10 text-center">
-                <AIOrb size={240} />
+              <div className="relative flex h-full flex-col items-center justify-center px-5 py-6 text-center sm:px-8 sm:py-10">
+                <AIOrb size={180} className="sm:hidden" />
+                <div className="hidden sm:block">
+                  <AIOrb size={240} />
+                </div>
                 <div className="mt-8">
                   <div className="text-[11px] uppercase tracking-[0.22em] text-white/45">
                     Aurora · neural core
@@ -187,7 +190,7 @@ export default function AICopilot() {
               {/* Conversation */}
               <div
                 ref={conversationRef}
-                className="flex max-h-[480px] flex-col gap-4 overflow-y-auto px-5 py-5"
+                className="flex max-h-[420px] flex-col gap-4 overflow-y-auto px-4 py-4 sm:max-h-[480px] sm:px-5 sm:py-5"
               >
                 {conversation.map((m, i) =>
                   m.role === "user" ? (

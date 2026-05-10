@@ -8,7 +8,7 @@ import { cn } from "@/utils/cn";
 
 export default function NewsFeed() {
   return (
-    <section id="news" className="relative py-32 sm:py-40">
+    <section id="news" className="relative py-16 sm:py-24 lg:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow={
@@ -26,8 +26,8 @@ export default function NewsFeed() {
           description="Aurora reads every headline, transcript, and filing across 4,200 sources, then projects sentiment onto your book in milliseconds."
         />
 
-        <div className="grid gap-6 lg:grid-cols-12">
-          <GlassCard className="rounded-3xl p-6 lg:col-span-7">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-12">
+          <GlassCard className="rounded-3xl p-4 sm:p-6 lg:col-span-7">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -71,7 +71,7 @@ export default function NewsFeed() {
                       {n.sentiment.toFixed(1)}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2 text-[11px] text-white/40">
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-white/40">
                         <span className="uppercase tracking-[0.16em]">
                           {n.src}
                         </span>
@@ -113,7 +113,7 @@ export default function NewsFeed() {
           </GlassCard>
 
           {/* Sentiment radial */}
-          <GlassCard className="relative overflow-hidden rounded-3xl p-6 lg:col-span-5">
+          <GlassCard className="relative overflow-hidden rounded-3xl p-4 sm:p-6 lg:col-span-5">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/40">
