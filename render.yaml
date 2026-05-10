@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: neurotrade-api
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: server
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: DATA_FILE
+        value: ./data/neurotrade.json
+      - key: BINANCE_WS_URL
+        value: wss://stream.binance.com:9443/ws
+      - key: COINGECKO_API_URL
+        value: https://api.coingecko.com/api/v3
+      # CORS_ORIGIN — set after frontend is deployed (e.g. https://neurotrade.vercel.app)
+      - key: CORS_ORIGIN
+        value: "*"
+      # OPENAI_API_KEY — add manually in Render dashboard if you want real GPT-4o-mini
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
