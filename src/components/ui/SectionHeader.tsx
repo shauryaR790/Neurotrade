@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { type ReactNode } from "react";
 
 type Props = {
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   title: ReactNode;
   description?: ReactNode;
   align?: "left" | "center";

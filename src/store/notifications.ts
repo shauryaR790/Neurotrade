@@ -13,7 +13,7 @@ export interface Toast {
 
 interface NotificationsState {
   toasts: Toast[];
-  push: (t: Omit<Toast, "id" | "createdAt"> & { ttl?: number }) => string;
+  push: (t: Omit<Toast, "id" | "createdAt" | "ttl"> & { ttl?: number }) => string;
   dismiss: (id: string) => void;
   clear: () => void;
 }
