@@ -140,25 +140,25 @@ export default function AICopilot() {
           description="Aurora speaks markets. Ask it anything in natural language — it reasons across tick data, news, options flow, macro, and your own positions, then acts with one click."
         />
 
-        <div className="grid gap-8 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           {/* LEFT — orb */}
-          <div className="relative lg:col-span-5">
+          <div className="relative w-full min-w-0 lg:col-span-5">
             <GlassCard
               variant="strong"
-              className="relative h-[300px] overflow-hidden rounded-3xl sm:h-[420px] lg:h-[460px]"
+              className="relative h-[260px] w-full overflow-hidden rounded-3xl sm:h-[420px] lg:h-[460px]"
             >
               <ParticleField density={45} className="opacity-60" />
               <div className="absolute inset-0 mesh-aurora opacity-50" />
-              <div className="relative flex h-full flex-col items-center justify-center px-4 py-5 text-center sm:px-8 sm:py-10">
-                <AIOrb size={140} className="sm:hidden" />
+              <div className="relative flex h-full w-full min-w-0 flex-col items-center justify-center px-3 py-4 text-center sm:px-8 sm:py-10">
+                <AIOrb size={110} className="sm:hidden" />
                 <div className="hidden sm:block">
                   <AIOrb size={240} />
                 </div>
-                <div className="mt-4 w-full max-w-full sm:mt-8">
+                <div className="mt-3 w-full min-w-0 sm:mt-8">
                   <div className="text-[10px] uppercase tracking-[0.22em] text-white/45 sm:text-[11px]">
                     Aurora · neural core
                   </div>
-                  <div className="mt-1.5 text-balance text-[15px] font-semibold leading-snug tracking-tight text-white sm:mt-2 sm:text-xl">
+                  <div className="mx-auto mt-1.5 max-w-full break-words text-balance text-[13px] font-semibold leading-snug tracking-tight text-white sm:mt-2 sm:text-xl">
                     Reasoning across <span className="text-accent-ice">12</span>{" "}
                     frontier models
                   </div>
@@ -398,7 +398,7 @@ function ThinkingTrace() {
     "Composing recommendation",
   ];
   return (
-    <div className="mt-3 flex flex-col gap-1 text-left sm:mt-6 sm:gap-1.5">
+    <div className="mt-2 flex flex-col gap-0.5 text-left sm:mt-6 sm:gap-1.5">
       {lines.map((l, i) => (
         <motion.div
           key={i}
@@ -408,13 +408,13 @@ function ThinkingTrace() {
             duration: 0.6,
             delay: 0.4 + i * 0.4,
           }}
-          className="flex items-center gap-2 text-[10.5px] text-white/55 sm:text-[11.5px]"
+          className={`${i >= 2 ? "hidden sm:flex" : "flex"} min-w-0 items-center gap-2 text-[10px] text-white/55 sm:text-[11.5px]`}
         >
-          <span className="font-mono text-[9.5px] text-white/30 sm:text-[10px]">
+          <span className="shrink-0 font-mono text-[9px] text-white/30 sm:text-[10px]">
             {String(i + 1).padStart(2, "0")}
           </span>
-          <span className="h-1 w-1 rounded-full bg-accent-mint shadow-[0_0_8px_rgba(125,240,194,0.7)]" />
-          <span className="truncate">{l}</span>
+          <span className="h-1 w-1 shrink-0 rounded-full bg-accent-mint shadow-[0_0_8px_rgba(125,240,194,0.7)]" />
+          <span className="min-w-0 truncate">{l}</span>
         </motion.div>
       ))}
     </div>
